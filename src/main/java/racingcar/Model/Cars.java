@@ -1,6 +1,7 @@
 package racingcar.Model;
 
 import camp.nextstep.edu.missionutils.Randoms;
+import racingcar.View.OutputView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +10,7 @@ public class Cars {
     private final List<Car> cars = new ArrayList<>();
 
     public Cars(String input){
-        List<String> carsName = List.of(input.split(","));
+        List<String> carsName = List.of(input.split(OutputView.COMMA));
         setCar(carsName);
     }
 
@@ -44,10 +45,5 @@ public class Cars {
             }
         }
         return winnerCar;
-    }
-
-    public void getWinner(){
-        List<String> winners = findWinner();
-        System.out.println("우승자: " + String.join(", ", winners));
     }
 }
